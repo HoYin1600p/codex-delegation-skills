@@ -1,0 +1,23 @@
+{
+  "task_id": "fixture-implementation-001",
+  "repo_root": "C:/absolute/path/to/a/disposable/fixture",
+  "base_commit": "0000000000000000000000000000000000000000",
+  "mode": "implement",
+  "objective": "Implement the one bounded change described in README.md.",
+  "context_paths": ["README.md", "greeting.py", "test_greeting.py"],
+  "forbidden_context": ["All unrelated repositories and external paths"],
+  "allowed_changed_paths": ["greeting.py"],
+  "acceptance_criteria": ["The fixture unit tests pass", "No other files change"],
+  "plan_status": "READY",
+  "risk": "low",
+  "review_required": true,
+  "locked_decisions": ["Keep the existing public interface"],
+  "stop_conditions": ["The requested behavior conflicts with README.md", "A required change falls outside allowed_changed_paths"],
+  "model": null,
+  "max_turns": 4,
+  "timeout_seconds": 120,
+  "validation_command": ["python", "-m", "unittest", "-v"],
+  "validation_timeout_seconds": 30,
+  "allow_subagents": false,
+  "require_subscription_auth": true
+}

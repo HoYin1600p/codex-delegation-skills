@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$"},
+    "repo_root": {"type": "string"},
+    "base_commit": {"type": "string", "pattern": "^[0-9a-fA-F]{40}$"},
+    "mode": {"type": "string", "enum": ["analyze", "implement", "review", "test"]},
+    "objective": {"type": "string", "minLength": 1, "maxLength": 10000},
+    "context_paths": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "forbidden_context": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "allowed_changed_paths": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "acceptance_criteria": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "plan_status": {"type": "string", "const": "READY"},
+    "risk": {"type": "string", "enum": ["low", "medium", "high"]},
+    "review_required": {"type": "boolean"},
+    "locked_decisions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "stop_conditions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "model": {"type": ["string", "null"]},
+    "max_turns": {"type": "integer", "minimum": 1, "maximum": 12},
+    "max_total_turns": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Deprecated legacy field retained for preserved task compatibility; the bridge no longer enforces a task-wide turn ceiling."
+    },
+    "max_extensions": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Deprecated legacy field retained for preserved task compatibility; the bridge no longer limits continuation count."
+    },
+    "timeout_seconds": {"type": "integer", "minimum": 5, "maximum": 1800},
+    "validation_command": {
+      "type": ["array", "null"],
+      "items": {"type": "string"},
+      "minItems": 1,
+      "maxItems": 24
+    },
+    "validation_timeout_seconds": {"type": "integer", "minimum": 1, "maximum": 1800},
+    "allow_subagents": {"const": false},
+    "require_subscription_auth": {"const": true}
+  },
+  "required": [
+    "task_id",
+    "repo_root",
+    "base_commit",
+    "mode",
+    "objective",
+    "context_paths",
+    "forbidden_context",
+    "allowed_changed_paths",
+    "acceptance_criteria",
+    "model",
+    "max_turns",
+    "timeout_seconds",
+    "allow_subagents",
+    "require_subscription_auth"
+  ]
+}

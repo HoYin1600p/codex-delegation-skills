@@ -20,7 +20,7 @@ The current lead normally plans and reviews. Do not spawn a planner because a ta
 | Complex or ambiguous | Resolve material design questions first; split at independently verifiable boundaries. Review integration and assumptions. |
 | High consequence | Identify concrete failure scenarios for security, data integrity, concurrency, migrations, or major architecture. Add one independent read-only Codex review when it addresses that risk. |
 
-All writing assignments require Codex acceptance. Optional helpers should use Sol for ordinary review and Astra for difficult, high-consequence reasoning at the lowest sufficient effort. Preserve the user's chosen lead model/effort. At most two independent read-only helpers may run concurrently; justify duplicated context cost.
+All writing assignments require Codex acceptance. Where available, optional helpers should use Sol for ordinary review and Astra for difficult, high-consequence reasoning at the lowest sufficient effort. Otherwise use a suitable model actually offered by the recipient's Codex installation; never request an unavailable model identifier. Preserve the user's chosen lead model/effort. At most two independent read-only helpers may run concurrently; justify duplicated context cost.
 
 ## Capacity and fallback
 
