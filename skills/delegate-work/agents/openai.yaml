@@ -1,0 +1,4 @@
+interface:
+  display_name: "Delegate Work"
+  short_description: "Claude implementation with Codex planning and review"
+  default_prompt: "Use $delegate-work to scope this change in Codex, delegate implementation to Claude, and validate the result. Use Grok after confirmed Claude five-hour exhaustion."
