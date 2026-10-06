@@ -1,5 +1,7 @@
 # Codex delegation skill
 
+> **Archived.** This Codex-led design has been replaced by [delegate-to-codex](https://github.com/HoYin1600p/delegate-to-codex), where Claude leads and Codex CLI workers implement. That direction turned out to be more efficient. This repository is kept read-only for reference.
+
 One `delegate-work` skill: Codex plans, reviews and accepts; Claude implements and corrects; Grok continues preserved work after confirmed Claude five-hour exhaustion. Both bridge programs, schemas, task template and setup checks are included.
 
 ## Install in Codex
